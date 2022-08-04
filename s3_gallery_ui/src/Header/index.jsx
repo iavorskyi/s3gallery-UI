@@ -4,9 +4,8 @@ import Select from '@mui/material/Select';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import * as React from 'react';
-import * as s from "./styles";
 import Typography from "@mui/material/Typography";
-import {Container, FormControl, InputLabel} from "@mui/material";
+import { FormControl, InputLabel} from "@mui/material";
 
 export const Header = () =>  {
     const [album=20, setAlbum] = React.useState(20);
