@@ -7,7 +7,7 @@ import * as React from 'react';
 import Typography from "@mui/material/Typography";
 import { FormControl, InputLabel} from "@mui/material";
 
-export const Header = () =>  {
+export const Header = (props) =>  {
     const [album=20, setAlbum] = React.useState(20);
 
   const handleChange = (event) => {
@@ -18,7 +18,6 @@ export const Header = () =>  {
             <Box
                 sx={{ display: 'flex', p: 1, bgcolor: 'background.paper', borderRadius: 1, margin: '2em' }}
             >
-
                     <Typography sx={{flexGrow: 2}} variant="h4"> s3 Gallery</Typography>
                 <FormControl sx={{flexGrow:5}}>
                     <InputLabel id="header-select-label">Album</InputLabel>
@@ -37,10 +36,7 @@ export const Header = () =>  {
                     </Select>
                 </FormControl>
                 <Box sx={{display:'flex', flexDirection: 'row-reverse', flexGrow:3}} >
-
-                        <Link href="#">Sign-in</Link>
-
-
+                        <Link href="#">{props.username}</Link>
                 </Box>
             </Box>
         </>

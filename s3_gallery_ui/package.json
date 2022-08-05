@@ -25,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://s3gallery-svc:8000",
+
+  "proxy": "http://localhost:8000",
   "eslintConfig": {
     "extends": [
       "react-app",
