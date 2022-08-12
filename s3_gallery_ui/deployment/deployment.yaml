@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: s3gallery-ui
-  namespace: default
   labels:
     app: s3gallery-ui
 spec:
@@ -30,7 +29,6 @@ metadata:
   labels:
     app: s3gallery-ui
   name: s3gallery-ui
-  namespace: default
 spec:
   type: LoadBalancer
   ports:
