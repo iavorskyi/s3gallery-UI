@@ -4,31 +4,29 @@ import Header from './Header';
 import Login from './Login';
 
 
-
-
 function App() {
-  const [token, setToken] = React.useState();
-  const [username, setUsername] = React.useState();
-  const updateToken = (token) => {
-      setToken(token)
-   }
+    const [token, setToken] = React.useState();
+    const [username, setUsername] = React.useState();
+    const updateToken = (token) => {
+        setToken(token)
+    }
     const updateUsername = (username) => {
-        console.log("Username: " + username )
+        console.log("Username: " + username)
         setUsername(username)
     }
-  return (
-          <>
+    return (
+        <>
             {token ? (
-                <div>
-                  <Header username = {username}/>
-                  <Gallery token = {token}/>
-                </div>
-              )
-              :
-              <Login updateToken = {updateToken} updateUsername = {updateUsername} />
+                    <div>
+                        <Header username={username}/>
+                        <Gallery token={token}/>
+                    </div>
+                )
+                :
+                <Login updateToken={updateToken} updateUsername={updateUsername}/>
             }
-          </>
-  )
+        </>
+    )
 }
 
 export default App;
