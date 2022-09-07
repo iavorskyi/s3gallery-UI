@@ -2,10 +2,17 @@ import * as React from 'react';
 import Gallery from './Gallery';
 import Header from './Header';
 import Login from './Login';
+import Cookies from 'js-cookie';
 
 
 function App() {
     const [token, setToken] = React.useState();
+    const [cookieUser, setCookieUser] = React.useState();
+    const getCookieUser = () => {
+        const cookieUser = Cookies.get('user')
+        console.log(cookieUser)
+        setCookieUser(cookieUser)
+    }
     const [username, setUsername] = React.useState();
     const updateToken = (token) => {
         setToken(token)
@@ -14,9 +21,10 @@ function App() {
         console.log("Username: " + username)
         setUsername(username)
     }
+    getCookieUser()
     return (
         <>
-            {token ? (
+            {cookieUser ? (
                     <div>
                         <Header username={username}/>
                         <Gallery token={token}/>
