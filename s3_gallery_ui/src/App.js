@@ -7,12 +7,6 @@ import Cookies from 'js-cookie';
 
 function App() {
     const [token, setToken] = React.useState();
-    const [cookieUser, setCookieUser] = React.useState();
-    const getCookieUser = () => {
-        const cookieUser = Cookies.get('mysession')
-        console.log(cookieUser)
-        setCookieUser(cookieUser)
-    }
     const [username, setUsername] = React.useState();
     const updateToken = (token) => {
         setToken(token)
@@ -21,7 +15,7 @@ function App() {
         console.log("Username: " + username)
         setUsername(username)
     }
-    getCookieUser()
+    const cookieUser = Cookies.get('mysession')
     return (
         <>
             {cookieUser ? (
