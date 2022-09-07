@@ -18,7 +18,7 @@ export const Header = (props) =>  {
 
   const handleLogOut = async () => {
         try {
-            const url = '/log-out'
+            const url = '/sign-out'
             const response = await axios.get(url);
         } catch (error) {
             if(axios.isCancel(error)){
