@@ -53,8 +53,7 @@ export const Header = (props) =>  {
                 </FormControl>
                 <Box sx={{display:'flex', flexDirection: 'row-reverse', flexGrow:3}} >
                         <Link href="#">{props.username}</Link>
-                        <Button onClick={handleLogOut}/>
-
+                        <Button onClick={handleLogOut}>Log out</Button>
                 </Box>
             </Box>
         </>
