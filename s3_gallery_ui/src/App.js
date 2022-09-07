@@ -9,7 +9,7 @@ function App() {
     const [token, setToken] = React.useState();
     const [cookieUser, setCookieUser] = React.useState();
     const getCookieUser = () => {
-        const cookieUser = Cookies.get('user')
+        const cookieUser = Cookies.get('mysession')
         console.log(cookieUser)
         setCookieUser(cookieUser)
     }
