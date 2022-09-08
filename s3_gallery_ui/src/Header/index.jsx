@@ -20,6 +20,7 @@ export const Header = (props) =>  {
         try {
             const url = '/sign-out'
             const response = await axios.get(url);
+            document.cookie = "mysession=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
         } catch (error) {
             if(axios.isCancel(error)){
                 console.log('Failed to log out');
