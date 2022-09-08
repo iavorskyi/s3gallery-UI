@@ -20,10 +20,10 @@ function App() {
         console.log("SESS:" + mysession )
         return mysession
     }
-    console.log("Session: "+cookieUser, "Token: " + token)
+    console.log("Session: "+cookieUser(), "Token: " + token)
     return (
         <>
-            {(cookieUser || token)? (
+            {token? (
                     <div>
                         <Header username={username}/>
                         <Gallery token={token}/>
