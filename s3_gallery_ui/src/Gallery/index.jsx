@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import axios from "axios";
 import { Paper} from "@mui/material";
+import Cookies from "js-cookie";
 
 const baseURL = "https://upper-austria.ventuscloud.eu:8080"
 const projectID = "c9801b4d232344f0869154501beaf8ed"
@@ -20,9 +21,13 @@ function Gallery(props) {
     const [isLoading, setIsLoading] = React.useState(false);
     const [hasError, setErrorFlag] = React.useState(false);
     const [file, setFile] = React.useState(null);
-    const config = {
-        headers: { Authorization: `Bearer ${props.token}` }
-    };
+    const config = () => {
+        if (Cookies.get('mysession')){
+         return {
+                headers: { Authorization: `Bearer ${props.token}` }
+            }
+        }
+}
 
     const handleFileUpload = (e) => {
         if (!e.target.files) {
@@ -60,7 +65,6 @@ function Gallery(props) {
     }
 
     React.useEffect(() => {
-        console.log("In useEffect")
         const source = axios.CancelToken.source();
         // DEV MOD
         // const url = 'http://localhost:8000/api/albums/demo/items/';
