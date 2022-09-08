@@ -16,8 +16,9 @@ function App() {
         setUsername(username)
     }
     const cookieUser = () =>{
-        console.log("SESS:" + Cookies.get('mysession') )
-        return Cookies.get('mysession')
+        const mysession = Cookies.get('mysession')
+        console.log("SESS:" + mysession )
+        return mysession
     }
     console.log("Session: "+cookieUser, "Token: " + token)
     return (
