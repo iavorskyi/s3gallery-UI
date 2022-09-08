@@ -2,6 +2,7 @@ import * as React from 'react';
 import Gallery from './Gallery';
 import Header from './Header';
 import Login from './Login';
+import Cookies from 'js-cookie';
 
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
         console.log("Username: " + username)
         setUsername(username)
     }
+    const cookieUser = () => Cookies.get('mysession')
     return (
         <>
-            {token ? (
+            {(cookieUser || token)? (
                     <div>
                         <Header username={username}/>
                         <Gallery token={token}/>
