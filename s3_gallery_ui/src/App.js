@@ -15,7 +15,7 @@ function App() {
         console.log("Username: " + username)
         setUsername(username)
     }
-    const cookieUser = Cookies.get('mysession')
+    const cookieUser = () => Cookies.get('mysession')
     return (
         <>
             {cookieUser ? (
