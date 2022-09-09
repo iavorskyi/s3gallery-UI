@@ -23,7 +23,7 @@ function App() {
     console.log("Session: "+cookieUser(), "Token: " + token)
     return (
         <>
-            {(cookieUser() && token)? (
+            {(cookieUser() || token)? (
                     <div>
                         <Header username={username}/>
                         <Gallery token={token}/>
