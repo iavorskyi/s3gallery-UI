@@ -67,7 +67,7 @@ function Gallery(props) {
     React.useEffect(() => {
         const source = axios.CancelToken.source();
         // DEV MOD
-        // const url = 'http://localhost:8000/api/albums/demo/items/';
+        // const url = `http://localhost:8000/api/albums/demo/items/`;
         const url = '/api/albums/demo/items/';
         const fetchImages = async () => {
             try {
