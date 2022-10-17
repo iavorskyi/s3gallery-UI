@@ -6,6 +6,8 @@ import Link from '@mui/material/Link';
 import * as React from 'react';
 import Typography from "@mui/material/Typography";
 import { FormControl, InputLabel} from "@mui/material";
+import Button from "@mui/material/Button";
+import axios from "axios";
 
 export const Header = (props) =>  {
     const [album=20, setAlbum] = React.useState(20);
@@ -13,6 +15,21 @@ export const Header = (props) =>  {
   const handleChange = (event) => {
     setAlbum(event.target.value);
   };
+
+  const handleLogOut = async () => {
+        try {
+            const url = '/sign-out'
+            const response = await axios.get(url);
+            document.cookie = "mysession=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        } catch (error) {
+            if(axios.isCancel(error)){
+                console.log('Failed to log out');
+            }else{
+            }
+        }
+    };
+
+
     return (
         <>
             <Box
@@ -37,6 +54,7 @@ export const Header = (props) =>  {
                 </FormControl>
                 <Box sx={{display:'flex', flexDirection: 'row-reverse', flexGrow:3}} >
                         <Link href="#">{props.username}</Link>
+                        <Button onClick={handleLogOut}>Log out</Button>
                 </Box>
             </Box>
         </>
