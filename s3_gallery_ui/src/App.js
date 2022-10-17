@@ -12,15 +12,12 @@ function App() {
         setToken(token)
     }
     const updateUsername = (username) => {
-        console.log("Username: " + username)
         setUsername(username)
     }
     const cookieUser = () =>{
         const mysession = Cookies.get('mysession')
-        console.log("SESS:" + mysession )
         return mysession
     }
-    console.log("Session: "+cookieUser(), "Token: " + token)
     return (
         <>
             {(cookieUser() || token)? (
