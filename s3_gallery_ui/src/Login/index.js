@@ -36,7 +36,7 @@ export default function SignIn(props) {
             try {
                 const data = {"email": email, "password": pw}
                 // const url = "http://localhost:8000/sign-in  "
-                const url = "http://s3gallery-svc.dev/sign-in"
+                const url = "http://s3gallery-svc.dev:8000/sign-in"
                 // DEV MOD
                 const response = await axios.post(url, data);
                 if (response.status === 200) {
